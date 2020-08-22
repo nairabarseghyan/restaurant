@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href = 'static/init.css' type = "text/css">
+        <title>{% block title %}{% endblock %}</title>
+    </head>
+    <body>
+
+    <header class="header">
+        <div class="container">
+            <div class="header__inner">
+                <div >	<a class="header_logo" href="{% url 'index' %}">Wake Up Cafe</a> </div>
+
+                <nav class="nav">
+
+                    <ul>
+                        <form class="nav__link">
+                            <input type="text" name="search" plachplder="search">
+                            <button>
+                                <a >Search</a>
+                            </button>
+                        </form>
+                        <li class="nav__link" href="#"><a class="nav__lnk" href="#">Service</a>
+                            <ul >
+                                <li class="nav__lnk" href="#"><a>VIP Tables</a>
+                                    <ul>
+                                        <li class="nav__lnk" href="#"><a>Tables with 6 transliteration places</a></li>
+                                        <li class="nav__lnk" href="#"><a>Tables with 5 transliteration places</a></li>
+                                        <li class="nav__lnk" href="#"><a>Tables with 4 transliteration places</a></li>
+                                        <li class="nav__lnk" href="#"><a>Tables with 3 transliteration places</a></li>
+                                        <li class="nav__lnk" href="#"><a>Tables with 2 transliteration places</a></li>
+
+                                    </ul>
+                                </li>
+                                <li class="nav__lnk" href="#"><a>Tables</a>
+                                    <ul>
+                                        <li class="nav__lnk" href="#"><a>Tables with 6 transliteration places </a></li>
+                                        <li class="nav__lnk" href="#"><a>Tables with 5 transliteration places </a></li>
+                                        <li class="nav__lnk" href="#"><a>Tables with 4 transliteration places </a></li>
+                                        <li class="nav__lnk" href="#"><a>Tables with 3 transliteration places </a></li>
+                                        <li class="nav__lnk" href="#"><a>Tables with 2 transliteration places </a></li>
+
+                                    </ul>
+                                </li>
+                            </ul>
+                        </li>
+                        <li class="nav__link" ><a class="nav__lnk" href="#">About</a></li>
+                        <li class="nav__link" ><a class="nav__lnk" href="#">Reserve</a></li>
+                        <li class="nav__link" ><a class="nav__lnk" href="#">Blog</a></li>
+                        <li class="nav__link" ><a class="nav__lnk" href="{% url 'signup' %}">Register</a></li>
+                        <li class="nav__link" ><a class="nav__lnk" href="{% url 'login' %}">Login</a></li>
+                    </ul>
+                </nav>
+            </div>
+
+        </div>
+    </header>
+
+        <div  class= {% block upper %} {% endblock %}>
+            <div class="container">
+
+            </div>
+        </div>
+
+    </body>
+</html>
