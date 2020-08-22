@@ -28,6 +28,15 @@ h1,h2,h3,h4,h5,h6{
     width: 100%;
     max-width: 1200px;
     margin: 0 auto;
+
+}
+.invisible{
+    height: 8vh;
+    top: 0;
+    left: 0;
+    right: 0;
+    width: 100%;
+    background-color:rgba(192,192,192,0.8);
 }
 
 
@@ -44,15 +53,15 @@ h1,h2,h3,h4,h5,h6{
     align-items: center;
 }
 .header_logo{
-    font-size: 30px;
+    font-size: 35px;
     font-weight: 700;
-    color: #FFEF00;
+    color: #FFA200;
 }
 
 .nav{
     margin: 0;
     padding: 0;
-    font-size: 14px;
+    font-size: 16px;
     text-transform: uppercase;
 }
 .nav ul,
@@ -68,7 +77,7 @@ ol{
     display: inline-block;
     margin: 0 15px;
 
-    color: #000000;
+    color: #FFA200;
     text-decoration: none;
 
     transition: color .3s linear;
@@ -94,12 +103,32 @@ ol{
 
 }
 .var_nav{
-    color: #000000;
+    color: #FFA200;
     text-decoration: none;
 
     transition: color .3s linear;
 }
 /*dizine*/
+.nav_lnk{
+
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+    vertical-align: top;
+    background-color:rgba(192,192,192,0.3);
+
+
+
+    color: #FFA200;
+    text-decoration: none;
+
+    transition: color .3s linear;
+}
+
+
+.nav_lnk:hover{
+    color: #19A92D;
+}
 .nav__lnk{
 
     margin: 0;
@@ -107,9 +136,7 @@ ol{
     list-style-type: none;
     vertical-align: top;
 
-
-
-    color: #FFEF00;
+    color: #FFA200;
     text-decoration: none;
 
     transition: color .3s linear;
@@ -122,8 +149,8 @@ ol{
 /*sub menu*/
 .nav ul > li  ul {
     position: absolute;
-    right: 500px;
-    top: 35px;
+    right: 550px;
+    top: 40px;
 }
 .nav li ul {
     position: absolute;
@@ -139,8 +166,8 @@ ol{
 }
 .nav li > ul li ul {
     position: absolute;
-    right: -280px;
-    top: 10px;
+    right: -315px;
+    top: 30px;
 }
 .nav li:hover > ul{
     display: block;
