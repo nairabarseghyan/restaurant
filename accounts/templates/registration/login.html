@@ -1,20 +1,27 @@
-<!DOCTYPE html>
-{% extends  'base_login.html' %}
+{% extends 'all_upper.html' %}
 {% load crispy_forms_tags %}
+    {% block title %}
+    Login
+    {% endblock %}
 
-{% block main %}
-<div class="card">
-<div class="card-body">
-<h4 class="card-title">Log in to your account</h4>
+{% block upper %} abc {% endblock %}
+{% block login %}  {% endblock %}
 
-<form method="post">
-{% csrf_token %}
-<input type="hidden" name="next" value="{{ next }}">
+{% block all %}
 
-{{ form|crispy }}
+    <body class="login">
+    <div class="loginbox">
+        <div  class="avatar"></div>
+        <h1 class="logdiz">Login Here</h1>
+        <form>
+            {% csrf_token %}
+             <input type="hidden" name="next" value="{{ next }}">
 
-<button type="submit" class="btn btn-primary btn-block">Log in</button>
-</form>
-</div>
-</div>
+            {{ form|crispy }}
+            <input  type="submit" name="" value="Login">
+
+        </form>
+    </div>
+    </body>
+
 {% endblock %}

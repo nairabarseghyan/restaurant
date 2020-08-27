@@ -1,10 +1,11 @@
-<!DOCTYPE html>
 {% load static %}
+<!DOCTYPE html>
 <html lang="en">
     <head>
         <meta charset="UTF-8">
         <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600&display=swap" rel="stylesheet">
         <link rel="stylesheet" href = "{% static 'init.css' %}" type = "text/css">
+        <link rel="stylesheet" href = "{% static 'login.css' %}" type = "text/css">
         <title>{% block title %}{% endblock %}</title>
     </head>
     <body>
@@ -25,7 +26,7 @@
                         </form>
                         <li class="nav__link" href="#"><a class="nav__lnk" href="/service">Service</a>
                             <ul >
-                                <li class="nav_lnk"><a class="nav_lnk"  href="/viptables">VIP Tables</a>
+                                {% block viptables %}<li class="nav_lnk"><a class="nav_lnk"  href="/viptables">VIP Tables</a>
                                     <ul>
                                         <li class="nav_lnk" href="#"><a>Tables with 6 transliteration places</a></li>
                                         <li class="nav_lnk" href="#"><a>Tables with 5 transliteration places</a></li>
@@ -34,8 +35,8 @@
                                         <li class="nav_lnk" href="#"><a>Tables with 2 transliteration places</a></li>
 
                                     </ul>
-                                </li>
-                                <li class="nav_lnk" ><a class="nav_lnk" href="/tables">Tables</a>
+                                </li>{% endblock %}
+                               {% block tables %} <li class="nav_lnk" ><a class="nav_lnk" href="/tables">Tables</a>
                                     <ul>
                                         <li class="nav_lnk" href="#"><a>Tables with 6 transliteration places </a></li>
                                         <li class="nav_lnk" href="#"><a>Tables with 5 transliteration places </a></li>
@@ -44,25 +45,31 @@
                                         <li class="nav_lnk" href="#"><a>Tables with 2 transliteration places </a></li>
 
                                     </ul>
-                                </li>
+                                </li> {% endblock %}
                             </ul>
                         </li>
                         <li class="nav__link" ><a class="nav__lnk" href="#">About</a></li>
                         <li class="nav__link" ><a class="nav__lnk" href="/reservation">Reserve</a></li>
                         <li class="nav__link" ><a class="nav__lnk" href="/blog">Blog</a></li>
                         <li class="nav__link" ><a class="nav__lnk" href="{% url 'signup' %}">Register</a></li>
-                        <li class="nav__link" ><a class="nav__lnk" href="{% url 'login' %}">Login</a></li>
+                        {% block  login %} <li class="nav__link" ><a class="nav__lnk" href="{% url 'login' %}">Login</a></li>{% endblock %}
                     </ul>
                 </nav>
             </div>
 
         </div>
+        {% block  all %}
+        {% endblock %}
+
     </header>
 
         <div  class= {% block upper %} {% endblock %}>
-            <div class="invisible" id="one">
+            <div class="invisible" >
+
 
             </div>
         </div>
     </body>
+    {% block  logbox %}
+        {% endblock %}
 </html>
