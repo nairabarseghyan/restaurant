@@ -43,11 +43,11 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'crispy_forms',
-
     'accounts',
     'home',
     'blogapp',
     'reservationpage',
+    'reservationpage.reservation_functions',
 
 ]
 
