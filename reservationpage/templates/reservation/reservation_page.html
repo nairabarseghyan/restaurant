@@ -2,49 +2,73 @@
 
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Table Detail</title>
+    <script src="https://kit.fontawesome.com/692189991f.js" crossorigin="anonymous"></script>
+
+    <!-- Main StyleSheet -->
     <link rel="stylesheet" href="{%  static  'css/main.css'  %}">
-    <title>Basic Bar</title>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
 </head>
 
 <body>
 
-<header class="header">
-    <div class="container">
-        <div class="header__inner">
-            <div class="header__logo">Basic Bar</div>
+    <!-- Main Content -->
+    <div class="content">
 
-            <nav class="nav">
-
-                <a class="nav__link" href="/home">Home</a>
-                <a class="nav__link" href="/reservation">Reservation</a>
-                <a class="nav__link" href="#">Login</a>
-                <a class="nav__link" href="#">Registration</a>
-            </nav>
-
+        <!-- Table Image -->
+        <div class="image">
+            <img
+                src="https://images.unsplash.com/photo-1519710164239-da123dc03ef4?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60">
 
         </div>
 
+        <!-- Table Details -->
+        <div class="table">
 
-    </div>
+            <!-- Div 1: Back to Home -->
+            <div class="home">
+                <a href="{% url 'TableList' %}"><i class="fas fa-arrow-alt-circle-left">Home</i></a>
+            </div>
 
-</header>
+            <!-- Div 2: Table Information -->
+            <div class="table-info">
+                <h1>{{table_category}}</h1>
+                <p> Welcome to the Wake Up Cafe.
+                    Reserve your table here and
+                    enjoy your time in our cafe. </p>
+            </div>
 
+            <!-- Div 3: Table Reservation Form -->
+            <form id="reservation-form" action="" method="POST">
 
-<div class="intro">
-    <div class="container">
-        <div class="intro__inner"></div>
-        <h1 class="intro__title">Welcome to Basic Bar</h1>
+                {% csrf_token %}
 
-    </div>
-</div>
+                <!-- Input Div -->
+                <div class="input-div">
+                    <label for="id_start_time">Start Time : </label>
+                    <input type="datetime-local" id="id_start_time" name="start_time">
+                </div>
 
-{% for reservation in reservations %}
-    <h1>{{ reservation.customer }}</h1>
-    <p>table number {{ reservation.table_number }} on {{ reservation.date_reserved}}</p>
+                <!-- Input Div -->
+                <div class="input-div">
+                    <label for="id_end_time">End Time : </label>
+                    <input type="datetime-local" id="id_end_time" name="end_time">
+                </div>
 
-{% endfor %}
+                <!-- Input Div -->
+                <div class="input-div">
+                    <button type="submit">Reserve the Table</button>
+                </div>
+
+            </form>
+
+        </div> <!-- END Room Div -->
+
+    </div> <!-- END Main Content Div -->
 
 </body>
+
 </html>
