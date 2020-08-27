@@ -4,15 +4,15 @@
     <head>
         <meta charset="UTF-8">
         <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600&display=swap" rel="stylesheet">
-        <link rel="stylesheet" href = 'static/init.css' type = "text/css">
+        <link rel="stylesheet" href = "{% static 'init.css' %}" type = "text/css">
         <title>{% block title %}{% endblock %}</title>
     </head>
     <body>
 
-    <header class="header">
+    <header class="header" id="one">
         <div class="container">
             <div class="header__inner">
-                <div >	<a class="header_logo" href="{% url 'index' %}">Wake Up Cafe</a> </div>
+                <div >	<a class="header_logo" href="/">Wake Up Cafe</a> </div>
 
                 <nav class="nav">
 
@@ -20,12 +20,12 @@
                         <form class="nav__link">
                             <input type="text" name="search" plachplder="search">
                             <button>
-                                <a >Search</a>
+                                <a class="nav_lnk">Search</a>
                             </button>
                         </form>
-                        <li class="nav__link" href="#"><a class="nav__lnk" href="#">Service</a>
+                        <li class="nav__link" href="#"><a class="nav__lnk" href="/service">Service</a>
                             <ul >
-                                <li class="nav_lnk" href="#"><a>VIP Tables</a>
+                                <li class="nav_lnk"><a class="nav_lnk"  href="/viptables">VIP Tables</a>
                                     <ul>
                                         <li class="nav_lnk" href="#"><a>Tables with 6 transliteration places</a></li>
                                         <li class="nav_lnk" href="#"><a>Tables with 5 transliteration places</a></li>
@@ -35,7 +35,7 @@
 
                                     </ul>
                                 </li>
-                                <li class="nav_lnk" href="#"><a>Tables</a>
+                                <li class="nav_lnk" ><a class="nav_lnk" href="/tables">Tables</a>
                                     <ul>
                                         <li class="nav_lnk" href="#"><a>Tables with 6 transliteration places </a></li>
                                         <li class="nav_lnk" href="#"><a>Tables with 5 transliteration places </a></li>
@@ -60,10 +60,9 @@
     </header>
 
         <div  class= {% block upper %} {% endblock %}>
-            <div class="invisible">
+            <div class="invisible" id="one">
 
             </div>
         </div>
-
     </body>
 </html>

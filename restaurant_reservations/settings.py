@@ -16,9 +16,7 @@ import os
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve(strict=True).parent.parent
 STATIC_DIR = os.path.join(BASE_DIR, 'static')
-STATICFILES_DIRS = [STATIC_DIR, ]
-VENV_PATH = os.path.dirname(BASE_DIR)
-STATIC_ROOT = os.path.join(VENV_PATH, 'static_root')
+STATICFILES_DIRS = [STATIC_DIR,]
 
 
 # Quick-start development settings - unsuitable for production
@@ -81,6 +79,7 @@ TEMPLATES = [
                 'django.template.context_processors.request',
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
+
             ],
         },
     },
@@ -137,5 +136,8 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/3.1/howto/static-files/
 
 STATIC_URL = '/static/'
+
+
+
 
 
