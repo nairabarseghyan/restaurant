@@ -73,3 +73,43 @@
     color: #FFA200;
     transition: 0.5s;
 }
+
+.regbox {
+    width: 500px;
+    height: 550px;
+    background: #89450A;
+    color: #fff;
+    top: 170%;
+    left: 30%;
+    position: absolute;
+    transition: translete(-50%, -50%);
+    box-sizing: border-box;
+    padding: 70px 30px;
+    border-radius: 20px;
+}
+
+.regsub {
+    border: none;
+    outline: none;
+    height: 40px;
+    background: #fff;
+    color: #FFA200;
+    font-size: 18px;
+    border-radius: 20px;
+
+}
+
+.regback{
+    width: 100%;
+    height: 100vh;
+    background: url("back.png") ;
+
+
+}
+
+.regsub:hover {
+    background: #FFA200;
+    color: #fff;
+    transition: 0.5s;
+
+}
