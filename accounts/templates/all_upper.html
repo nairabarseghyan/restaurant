@@ -24,7 +24,7 @@
                                 <a class="nav_lnk">Search</a>
                             </button>
                         </form>
-                        <li class="nav__link" href="#"><a class="nav__lnk" href="/service">Service</a>
+                        {% block services %}<li class="nav__link" href="#"><a class="nav__lnk" href="/service">Service</a>
                             <ul >
                                 {% block viptables %}<li class="nav_lnk"><a class="nav_lnk"  href="/viptables">VIP Tables</a>
                                     <ul>
@@ -47,7 +47,7 @@
                                     </ul>
                                 </li> {% endblock %}
                             </ul>
-                        </li>
+                        </li>{% endblock %}
                         <li class="nav__link" ><a class="nav__lnk" href="#">About</a></li>
                         <li class="nav__link" ><a class="nav__lnk" href="/reservation">Reserve</a></li>
                         <li class="nav__link" ><a class="nav__lnk" href="/blog">Blog</a></li>
