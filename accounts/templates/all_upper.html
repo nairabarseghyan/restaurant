@@ -13,46 +13,46 @@
     <header class="header" id="one">
         <div class="container">
             <div class="header__inner">
-                <div >	<a class="header_logo" href="/">Wake Up Cafe</a> </div>
+                <div >	<a class="header_logo" href="/"><b class="shadow">Wake Up Cafe</b></a> </div>
 
                 <nav class="nav">
 
                     <ul>
                         <form class="nav__link">
-                            <input type="text" name="search" plachplder="search">
-                            <button>
+                            <input class="clor" type="text" name="search" plachplder="search">
+                            <button class="clor">
                                 <a class="nav_lnk">Search</a>
                             </button>
                         </form>
-                        {% block services %}<li class="nav__link" href="#"><a class="nav__lnk" href="/service">Service</a>
+                        {% block services %}<li class="nav__link" href="#"><a class="nav__lnk" href="/service"><b class="shadow">Service</b></a>
                             <ul >
-                                {% block viptables %}<li class="nav_lnk"><a class="nav_lnk"  href="/viptables">VIP Tables</a>
+                                {% block viptables %}<li class="nav_lnk"><a class="nav_lnk"  href="/viptables"><b class="shadow">VIP Tables</b></a>
                                     <ul>
-                                        <li class="nav_lnk" href="#"><a>Tables with 6 transliteration places</a></li>
-                                        <li class="nav_lnk" href="#"><a>Tables with 5 transliteration places</a></li>
-                                        <li class="nav_lnk" href="#"><a>Tables with 4 transliteration places</a></li>
-                                        <li class="nav_lnk" href="#"><a>Tables with 3 transliteration places</a></li>
-                                        <li class="nav_lnk" href="#"><a>Tables with 2 transliteration places</a></li>
+                                        <li class="nav_lnk" href="#"><a><b class="shadow">Tables with 6 transliteration places</b></a></li>
+                                        <li class="nav_lnk" href="#"><a><b class="shadow">Tables with 5 transliteration places</b></a></li>
+                                        <li class="nav_lnk" href="#"><a><b class="shadow">Tables with 4 transliteration places</b></a></li>
+                                        <li class="nav_lnk" href="#"><a><b class="shadow">Tables with 3 transliteration places</b></a></li>
+                                        <li class="nav_lnk" href="#"><a><b class="shadow">Tables with 2 transliteration places</b></a></li>
 
                                     </ul>
                                 </li>{% endblock %}
-                               {% block tables %} <li class="nav_lnk" ><a class="nav_lnk" href="/tables">Tables</a>
+                               {% block tables %} <li class="nav_lnk" ><a class="nav_lnk" href="/tables"><b class="shadow">Tables</b></a>
                                     <ul>
-                                        <li class="nav_lnk" href="#"><a>Tables with 6 transliteration places </a></li>
-                                        <li class="nav_lnk" href="#"><a>Tables with 5 transliteration places </a></li>
-                                        <li class="nav_lnk" href="#"><a>Tables with 4 transliteration places </a></li>
-                                        <li class="nav_lnk" href="#"><a>Tables with 3 transliteration places </a></li>
-                                        <li class="nav_lnk" href="#"><a>Tables with 2 transliteration places </a></li>
+                                        <li class="nav_lnk" href="#"><a><b class="shadow">Tables with 6 transliteration places</b> </a></li>
+                                        <li class="nav_lnk" href="#"><a><b class="shadow">Tables with 5 transliteration places </b></a></li>
+                                        <li class="nav_lnk" href="#"><a><b class="shadow">Tables with 4 transliteration places</b> </a></li>
+                                        <li class="nav_lnk" href="#"><a><b class="shadow">Tables with 3 transliteration places</b> </a></li>
+                                        <li class="nav_lnk" href="#"><a><b class="shadow">Tables with 2 transliteration places</b> </a></li>
 
                                     </ul>
                                 </li> {% endblock %}
                             </ul>
                         </li>{% endblock %}
-                        <li class="nav__link" ><a class="nav__lnk" href="#">About</a></li>
-                        <li class="nav__link" ><a class="nav__lnk" href="/reservation">Reserve</a></li>
-                        <li class="nav__link" ><a class="nav__lnk" href="/blog">Blog</a></li>
-                        {% block  reg %}<li class="nav__link" ><a class="nav__lnk" href="{% url 'signup' %}">Register</a></li>{% endblock %}
-                        {% block  login %} <li class="nav__link" ><a class="nav__lnk" href="{% url 'login' %}">Login</a></li>{% endblock %}
+                        <li class="nav__link" ><a class="nav__lnk" href="#"><b class="shadow">About</b></a></li>
+                        <li class="nav__link" ><a class="nav__lnk" href="/reservation"><b class="shadow">Reserve</b></a></li>
+                        <li class="nav__link" ><a class="nav__lnk" href="/blog"><b class="shadow">Blog</b></a></li>
+                        {% block  reg %}<li class="nav__link" ><a class="nav__lnk" href="{% url 'signup' %}"><b class="shadow">Register</b></a></li>{% endblock %}
+                        {% block  login %} <li class="nav__link" ><a class="nav__lnk" href="{% url 'login' %}"><b class="shadow">Login</b></a></li>{% endblock %}
                     </ul>
                 </nav>
             </div>

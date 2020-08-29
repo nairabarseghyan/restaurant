@@ -147,6 +147,7 @@ ol{
 
     color: #FFA200;
     text-decoration: none;
+    text-shadow:2px 2px 1px #000
 
     transition: color .3s linear;
 }
@@ -206,4 +207,12 @@ ol{
     background: url("tables.jpg") center no-repeat;
     -webkit-background-size: cover;
     background-size: cover;
+}
+.shadow{
+    text-shadow:2px 2px 1px #000
+}
+
+.clor{
+    border-radius: 15px;
+
 }
