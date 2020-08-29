@@ -51,8 +51,7 @@
                         <li class="nav__link" ><a class="nav__lnk" href="#"><b class="shadow">About</b></a></li>
                         <li class="nav__link" ><a class="nav__lnk" href="/reservation"><b class="shadow">Reserve</b></a></li>
                         <li class="nav__link" ><a class="nav__lnk" href="/blog"><b class="shadow">Blog</b></a></li>
-                        {% block  reg %}<li class="nav__link" ><a class="nav__lnk" href="{% url 'signup' %}"><b class="shadow">Register</b></a></li>{% endblock %}
-                        {% block  login %} <li class="nav__link" ><a class="nav__lnk" href="{% url 'login' %}"><b class="shadow">Login</b></a></li>{% endblock %}
+                        {% block  login %} <li class="nav__link" ><a class="nav__lnk" href="{% url 'login' %}"><div  class="friends"></div></a></li>{% endblock %}
                     </ul>
                 </nav>
             </div>

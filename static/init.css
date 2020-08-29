@@ -157,7 +157,7 @@ ol{
 /*sub menu*/
 .nav ul > li  ul {
     position: absolute;
-    right: 550px;
+    right: 370px;
     top: 40px;
 }
 .nav li ul {
@@ -215,4 +215,12 @@ ol{
 .clor{
     border-radius: 15px;
 
+}
+.friends {
+    width: 34px;
+    height: 34px;
+    position: absolute;
+    top: 10px;
+    background: url("pi1.png") ;
+    background-size: cover;
 }
