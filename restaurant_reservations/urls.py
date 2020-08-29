@@ -18,7 +18,7 @@ from django.template.context_processors import static
 from django.urls import path, include
 from django.conf import settings
 from django.conf.urls.static import static
-
+from django.conf.urls import url
 
 urlpatterns = [
     path('', include('home.urls')),
@@ -26,8 +26,8 @@ urlpatterns = [
     path('home/', include('home.urls')),
     path('accounts/', include('accounts.urls')),
     path('blog/', include("blogapp.urls")),
+    path('reservation/', include("reservationpage.urls")),
 ]
-
 
 if settings.DEBUG:
     urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
