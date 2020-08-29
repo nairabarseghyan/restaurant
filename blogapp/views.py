@@ -3,6 +3,7 @@ from django.views.generic import ListView, DetailView, CreateView, UpdateView, D
 from .models import Post
 from .forms import PostForm, EditForm
 from django.urls import reverse_lazy
+from django.conf import settings
 
 # def home(request):
     # return render(request, 'home.html', {})
@@ -10,6 +11,10 @@ from django.urls import reverse_lazy
 class HomeView(ListView):
     model = Post
     template_name = 'home.html'
+    ordering = ['-post_date']
+    # ordering = ['-id']
+    # settings.LOGIN_REDIRECT_URL = 'home'
+    # settings.LOGOUT_REDIRECT_URL = 'home'
 
 
 class ArticleDetailView(DetailView):
@@ -19,10 +24,10 @@ class ArticleDetailView(DetailView):
 
 class AddPostView(CreateView):
     model = Post
-    form_class = PostForm
+    # form_class = PostForm
     template_name = 'add_post.html'
     # fields = '__all__'
-    # fields = ('title', 'body')
+    fields = ('title', 'author', 'body')
 
 class UpdatePostView(UpdateView):
     model = Post
@@ -33,5 +38,5 @@ class UpdatePostView(UpdateView):
 class DeletePostView(DeleteView):
     model = Post
     template_name = 'delete_post.html'
-    success_url = reverse_lazy('home')
+    success_url = reverse_lazy('blogapp:home')
 

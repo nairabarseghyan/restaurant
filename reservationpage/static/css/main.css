@@ -1,103 +1,95 @@
-body {
-    margin: 0;
-    font-family: 'Montserrat', sans-serif;
+/* Root CSS */
 
-    font-size: 20px;
-    line-height: 1.6;
-    color: #ffffff;
-}
-
-*,
-*:before,
-*:after {
+*{
+    padding:0;
+    margin:0;
     box-sizing: border-box;
 }
-
-h1, h2, h3, h4, h5, h6 {
-    margin: 0;
+body{
+    background-color: rgb(46, 47, 48);
+    color: rgb(236, 235, 228);
+    font-family: sans-serif;
+    line-height: 1.25;
+    height: 100vh;
 }
 
-/* Container */
-.container {
-    width: 100%;
-    max-width: 1200px;
-    margin: 0 auto;
+/* Main Divs */
+.content {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    width:100%;
+    justify-content: left;
 }
 
-/* Intro */
-.intro {
+.image{
+    flex: 0.3;
+}
+
+.room{
+    flex:0.5;
+    margin: 2rem;
+    display:flex;
+    text-align: left;
+    align-items: start;
+    flex-direction: column;
+}
+
+/* Sub Divs */
+
+.home{
+    flex: 0.2;
+}
+.room-info{
+    flex: 0.4;
+    margin: 5rem 1rem;
+
+}
+
+form{
+    display: flex;
+    flex: 0.4 1 auto;
+    flex-direction: column;
+}
+
+/* Inside Sub Divs */
+
+.image img{
+    flex:1;
+    max-height: 99.2vh;
+}
+
+i{
+    color:#dfdfdf;
+    font-size: 2rem;
+}
+
+/* Form's CSS */
+
+.input-div{
+    flex: 1 1 auto;
+    margin:1rem;
     display: flex;
     flex-direction: column;
-    justify-content: center;
-    width: 100%;
-    height: 100vh;
-
-    background: url("../images/intro_py.jpg") center no-repeat;
-    -webkit-background-size: cover;
-    background-size: cover;
-}
-
-.intro__title {
-    color: #fff;
-    font-size: 130px;
-    font-weight: 700;
-    text-transform: uppercase;
-    text-align: center;
-    line-height: 1;
-}
-
-.intro__inner {
-    width: 100%;
-    max-width: 800px;
-    margin: 0 auto;
-
-    text-align: center;
-}
-
-/* Header */
-.header {
-    width: 100%;
-    padding-top: 30px;
-
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    z-index: 1000;
-}
-
-.header__inner {
-    display: flex;
     justify-content: space-between;
-    align-items: center;
 }
 
-.header__logo {
-    font-size: 35px;
-    font-weight: 700;
-    color: #fff;
+input, button{
+    flex:1;
+    width:300px;
+    border-radius: 0.5rem;
+    line-height: 1.5;
+    font-size: 1.5rem;
+    color: #555;
 }
 
-
-/* Nav */
-.nav {
-    font-size: 20px;
-    text-transform: uppercase;
-
-}
-.nav__link {
-    display: inline-block;
-    vertical-align: top;
-    margin: 0 15px;
-    position: relative;
-
-    color: #fff;
-    text-decoration: none;
-
-    transition: color .1s linear;
+button{
+    background-color: #dfdfdf;
+    color:rgb(6, 137, 245);
+    outline:none;
 }
 
-
-.nav__link:hover {
-    color: #fce38a;
+button:hover{
+    color:#dfdfdf;
+    background-color: rgb(6, 137, 245);
 }
