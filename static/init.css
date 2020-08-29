@@ -33,6 +33,7 @@ h1,h2,h3,h4,h5,h6{
 
 }
 .invisible{
+    position: fixed;
     height: 9vh;
     top: 0;
     left: 0;
@@ -47,6 +48,7 @@ h1,h2,h3,h4,h5,h6{
 
 
 .header{
+    position: fixed;
 
     width: 100%;
 
