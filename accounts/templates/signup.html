@@ -12,19 +12,19 @@
 
 
 {% block all %}
-<div >
-    <div class="regbox">
-        <h4 class="logdiz">Sign in to your account</h4>
+    <div >
+        <div class="regbox">
+            <h4 class="logdiz">Sign in to your account</h4>
 
-        <form >
-            {% csrf_token %}
-            <input type="hidden" name="next" value="{{ next }}">
+            <form >
+                {% csrf_token %}
+                <input type="hidden" name="next" value="{{ next }}">
 
-            {{ form|crispy }}
+                {{ form|crispy }}
 
-          <center>  <button type="submit" class="regsub">Sign in</button> </center>
-        </form>
+              <center>  <button type="submit" class="regsub">Sign in</button> </center>
+            </form>
+        </div>
     </div>
-</div>
 {% endblock %}
 
