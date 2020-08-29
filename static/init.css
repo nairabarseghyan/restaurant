@@ -216,11 +216,21 @@ ol{
     border-radius: 15px;
 
 }
-.friends {
+
+.f {
     width: 34px;
     height: 34px;
     position: absolute;
-    top: 10px;
+    background-color: #FFA200;
+    top: -5px;
+    left: -5px;
     background: url("pi1.png") ;
+    background-size: cover;
+}
+.friends {
+    width: 24px;
+    height: 24px;
+    position: absolute;
+    background-color: #FFA200;
     background-size: cover;
 }
