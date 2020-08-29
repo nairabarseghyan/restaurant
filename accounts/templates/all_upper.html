@@ -1,15 +1,16 @@
-<!DOCTYPE html>
 {% load static %}
+<!DOCTYPE html>
 <html lang="en">
     <head>
         <meta charset="UTF-8">
         <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600&display=swap" rel="stylesheet">
-        <link rel="stylesheet" href = 'static/init.css' type = "text/css">
+        <link rel="stylesheet" href = "{% static 'init.css' %}" type = "text/css">
+        <link rel="stylesheet" href = "{% static 'login.css' %}" type = "text/css">
         <title>{% block title %}{% endblock %}</title>
     </head>
     <body>
 
-    <header class="header">
+    <header class="header" id="one">
         <div class="container">
             <div class="header__inner">
                 <div >	<a class="header_logo" href="/">Wake Up Cafe</a> </div>
@@ -20,12 +21,12 @@
                         <form class="nav__link">
                             <input type="text" name="search" plachplder="search">
                             <button>
-                                <a >Search</a>
+                                <a class="nav_lnk">Search</a>
                             </button>
                         </form>
-                        <li class="nav__link" href="#"><a class="nav__lnk" href="#">Service</a>
+                        {% block services %}<li class="nav__link" href="#"><a class="nav__lnk" href="/service">Service</a>
                             <ul >
-                                <li class="nav_lnk" href="#"><a>VIP Tables</a>
+                                {% block viptables %}<li class="nav_lnk"><a class="nav_lnk"  href="/viptables">VIP Tables</a>
                                     <ul>
                                         <li class="nav_lnk" href="#"><a>Tables with 6 transliteration places</a></li>
                                         <li class="nav_lnk" href="#"><a>Tables with 5 transliteration places</a></li>
@@ -34,8 +35,8 @@
                                         <li class="nav_lnk" href="#"><a>Tables with 2 transliteration places</a></li>
 
                                     </ul>
-                                </li>
-                                <li class="nav_lnk" href="#"><a>Tables</a>
+                                </li>{% endblock %}
+                               {% block tables %} <li class="nav_lnk" ><a class="nav_lnk" href="/tables">Tables</a>
                                     <ul>
                                         <li class="nav_lnk" href="#"><a>Tables with 6 transliteration places </a></li>
                                         <li class="nav_lnk" href="#"><a>Tables with 5 transliteration places </a></li>
@@ -44,26 +45,31 @@
                                         <li class="nav_lnk" href="#"><a>Tables with 2 transliteration places </a></li>
 
                                     </ul>
-                                </li>
+                                </li> {% endblock %}
                             </ul>
-                        </li>
+                        </li>{% endblock %}
                         <li class="nav__link" ><a class="nav__lnk" href="#">About</a></li>
-                        <li class="nav__link" ><a class="nav__lnk" href="#">Reserve</a></li>
+                        <li class="nav__link" ><a class="nav__lnk" href="/reservation">Reserve</a></li>
                         <li class="nav__link" ><a class="nav__lnk" href="/blog">Blog</a></li>
-                        <li class="nav__link" ><a class="nav__lnk" href="{% url 'signup' %}">Register</a></li>
-                        <li class="nav__link" ><a class="nav__lnk" href="{% url 'login' %}">Login</a></li>
+                        {% block  reg %}<li class="nav__link" ><a class="nav__lnk" href="{% url 'signup' %}">Register</a></li>{% endblock %}
+                        {% block  login %} <li class="nav__link" ><a class="nav__lnk" href="{% url 'login' %}">Login</a></li>{% endblock %}
                     </ul>
                 </nav>
             </div>
 
         </div>
+        {% block  all %}
+        {% endblock %}
+
     </header>
 
         <div  class= {% block upper %} {% endblock %}>
-            <div class="invisible">
+            <div class="invisible" >
+
 
             </div>
         </div>
-
     </body>
+    {% block  logbox %}
+        {% endblock %}
 </html>
