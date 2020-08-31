@@ -1,5 +1,6 @@
 # accounts views
 from django.contrib.auth import login, authenticate
+from django.contrib.auth.decorators import login_required
 from django.http import HttpResponse
 from django.shortcuts import render, redirect, get_object_or_404, HttpResponseRedirect
 from django.contrib.sites.shortcuts import get_current_site
@@ -17,7 +18,7 @@ from . import forms, models
 from .models import Profile
 from .tokens import account_activation_token
 from django.template.loader import render_to_string
-from .forms import SignUpForm, ProfileForm
+from .forms import SignUpForm, ProfileForm, UserUpdateForm
 from .tokens import account_activation_token
 
 
@@ -72,37 +73,47 @@ def signup_view(request):
     return render(request, 'signup.html', {'form': form})
 
 
+@login_required
 def profile(request):
-    user = request.user
-    if user.is_authenticated:
-        p_user = Profile.objects.get(user=user)
-    else:
-        return "Sing in"
-    return render(request, 'profile.html', {'profile': p_user})
-
-
-def edit_profile(request):
-    user = request.user
-    form = ProfileForm(request.POST or None,
-                       initial={'username': user.username, 'email': user.profile.email, 'first_name': user.profile.first_name,
-                                'last_name': user.profile.last_name, 'date_of_birth': user.profile.date_of_birth})
     if request.method == 'POST':
-        if form.is_valid():
-            user.username = request.POST['username']
-            user.first_name = request.POST['first_name']
-            user.profile.first_name = request.POST['first_name']
-            user.last_name = request.POST['last_name']
-            user.profile.last_name = request.POST['last_name']
-            user.date_of_birth = request.POST['date_of_birth']
-            user.profile.date_of_birth = request.POST['date_of_birth']
-            user.profile.email = request.POST['email']
-            user.email = request.POST['email']
+        u_form = UserUpdateForm(request.POST, instance=request.user)
+        p_form = ProfileForm(request.POST,
+                             request.FILES,
+                             instance=request.user.profile)
+        if u_form.is_valid() and p_form.is_valid():
+            u_form.save()
+            p_form.save()
+    else:
+        u_form = UserUpdateForm(instance=request.user)
+        p_form = ProfileForm()
 
-            user.save()
-            return HttpResponseRedirect('%s' % (reverse('profile')))
+    context = {'u_form': u_form, 'p_form': p_form}
+    return render(request, 'profile.html', context)
 
-    context = {
-        "form": form
-    }
 
-    return render(request, "edit_profile.html", context)
+# def edit_profile(request):
+#     user = request.user
+#     form = ProfileForm(request.POST or None,
+#                        initial={'username': user.username, 'email': user.profile.email,
+#                                 'first_name': user.profile.first_name,
+#                                 'last_name': user.profile.last_name, 'date_of_birth': user.profile.date_of_birth})
+#     if request.method == 'POST':
+#         if form.is_valid():
+#             user.username = request.POST['username']
+#             user.first_name = request.POST['first_name']
+#             user.profile.first_name = request.POST['first_name']
+#             user.last_name = request.POST['last_name']
+#             user.profile.last_name = request.POST['last_name']
+#             user.date_of_birth = request.POST['date_of_birth']
+#             user.profile.date_of_birth = request.POST['date_of_birth']
+#             user.profile.email = request.POST['email']
+#             user.email = request.POST['email']
+#
+#             user.save()
+#             return HttpResponseRedirect('%s' % (reverse('profile')))
+#
+#     context = {
+#         "form": form
+#     }
+#
+#     return render(request, "edit_profile.html", context)

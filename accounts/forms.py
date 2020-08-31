@@ -18,16 +18,22 @@ class SignUpForm(UserCreationForm):
         fields = ('username', 'email', 'password1', 'password2')
 
 
+class UserUpdateForm(forms.ModelForm):
+    class Meta:
+        model = User
+        fields = ['first_name', 'last_name']
+
+
 YEARS = [x for x in range(1940, 2021)]
 
 
 class ProfileForm(forms.ModelForm):
-    username = forms.CharField(max_length=100)
-    first_name = forms.CharField(max_length=100)
-    last_name = forms.CharField(max_length=100)
-    email = forms.EmailField(max_length=150)
-    date_of_birth = forms.DateField() #widget=forms.SelectDateWidget(years=YEARS)
+    # username = forms.CharField(max_length=100)
+    # first_name = forms.CharField(max_length=100)
+    # last_name = forms.CharField(max_length=100)
+    # email = forms.EmailField(max_length=150)
+    date_of_birth = forms.DateField(widget=forms.SelectDateWidget(years=YEARS))
 
     class Meta:
         model = Profile
-        fields = ('username', 'first_name', 'last_name', 'date_of_birth', 'email')
+        fields = ['first_name', 'last_name', 'date_of_birth', 'email', 'photo']

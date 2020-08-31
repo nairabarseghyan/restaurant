@@ -16,7 +16,7 @@
         <div class="regbox">
             <h4 class="logdiz">Sign in to your account</h4>
 
-            <form >
+            <form method="post">
                 {% csrf_token %}
                 <input type="hidden" name="next" value="{{ next }}">
 

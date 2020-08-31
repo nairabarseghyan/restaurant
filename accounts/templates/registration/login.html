@@ -1,4 +1,5 @@
 {% extends 'all_upper.html' %}
+
 {% load crispy_forms_tags %}
 
     {% block title %}
@@ -15,7 +16,8 @@
     <div class="loginbox">
         <div  class="avatar"></div>
         <h1 class="logdiz">Login Here</h1>
-        <form>
+        <form method="post">
+
             {% csrf_token %}
              <input type="hidden" name="next" value="{{ next }}">
 
