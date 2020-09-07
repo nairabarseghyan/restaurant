@@ -1,0 +1,33 @@
+.text_1{
+    text-decoration: none;
+}
+.tab{
+    position: absolute;
+    top: 180px;
+    left: 100px;
+}
+
+.center1{
+    transition: 0.5s;
+    list-style: none;
+    margin: 10px;
+    padding: 0;
+    background: #f5b006;
+    height: 50px;
+    width: 200px;
+    text-align: center;
+    border-radius: 30px;
+
+}
+.tab1 {
+    transform: translateY(10px);
+    color: #fff;
+}
+.tab1:hover {
+    color: #f5b006;
+}
+
+.center1:hover {
+    background-color: #fff;
+
+}
