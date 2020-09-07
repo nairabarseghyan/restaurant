@@ -1,0 +1,43 @@
+{% extends 'all_upper.html' %}
+ {% block title %}
+    Wake Up Cafe
+ {% endblock %}
+
+{% block  all %}
+        <ul class="tab">
+            <div class="center1"><a class="text_1" href="1"><li class="tab1"> Coffee </li></a></div>
+            <div class="center1"><a class="text_1" href="1"><li class="tab1"> Drink </li></a></div>
+            <div class="center1"><a class="text_1" href="1"><li class="tab1"> Dessert </li></a></div>
+            <div class="center1"><a class="text_1" href="1"><li class="tab1"> Food </li></a></div>
+        </ul>
+{% endblock %}
+
+ {% block  allmenu %}
+
+  <div class="menu">
+        <div class="grid">
+                {%for food in foods%}
+                 <div class="item"><img src="{{food.food_photo.url}}" width="150px" height="90px" >
+                        {{food.food_name}}
+                    </div>
+
+                {% endfor %}
+
+
+        </div>
+       <div class="si1">
+            <ul class="flex-container flex-start">
+                {% for i in id %}
+                <li class="flex-item"><a href="{{i}}" class="list"> {{i}} </a></li>
+                {% endfor%}
+
+            </ul>
+        </div>
+
+  </div>
+
+ {% endblock %}
+
+{% block upper %}
+    "intro"
+{% endblock %}

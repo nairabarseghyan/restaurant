@@ -6,6 +6,7 @@
         <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600&display=swap" rel="stylesheet">
         <link rel="stylesheet" href = "{% static 'init.css' %}" type = "text/css">
         <link rel="stylesheet" href = "{% static 'login.css' %}" type = "text/css">
+         <link rel="stylesheet" href = "{% static 'tab.css' %}" type = "text/css">
         <title>{% block title %}{% endblock %}</title>
     </head>
     <body>
@@ -68,6 +69,8 @@
 
             </div>
         </div>
+    {% block  allmenu %}
+        {% endblock %}
     </body>
     {% block  logbox %}
         {% endblock %}
