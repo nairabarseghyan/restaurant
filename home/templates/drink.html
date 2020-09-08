@@ -5,9 +5,9 @@
 
       <div class="menu">
             <div class="grid">
-                                    {%for food in foods%}
-                                     <div class="item"><img src="{{food.food_photo.url}}" width="150px" height="90px" >
-                                            {{food.food_name}}
+                                    {%for drink in drinks%}
+                                     <div class="item"><img src="{{drink.drink_photo.url}}" width="150px" height="90px" >
+                                            {{drink.drink_name}}
                                         </div>
 
                                     {% endfor %}
@@ -16,8 +16,8 @@
             </div>
                    <div class="si1">
                         <ul class="flex-container flex-start">
-                            {% for i in id %}
-                            <li class="flex-item"><a href="{{i}}" class="list"> {{i}} </a></li>
+                            {% for b in drink_id %}
+                            <li class="flex-item"><a href="{{b}}" class="list"> {{b}} </a></li>
                             {% endfor%}
 
                         </ul>
@@ -26,4 +26,3 @@
       </div>
 
  {% endblock %}
-
