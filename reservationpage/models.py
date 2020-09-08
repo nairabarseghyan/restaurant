@@ -29,5 +29,13 @@ class Reservation(models.Model):
 
 
 class Customer(models.Model):
-    pass
+    user = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE)
+    table = models.ForeignKey(Table, on_delete=models.CASCADE)
+    time = models.CharField(max_length=10, default="DEFAULT VALUE")
+    bill = models.IntegerField(blank=True, null=True)
+
+    def __str__(self):
+        return f'{self.user} has reserved {self.table} for {self.time} hours. Bill is {self.bill} drams'
+
+
 

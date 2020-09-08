@@ -22,7 +22,6 @@ class TableDetailView(View):
         table_list = Table.objects.filter(category=category)
 
 
-
         if len(table_list)>0:
             table = table_list[0]
             table_category = dict(table.TABLE_CATEGORIES).get(table.category, None)
