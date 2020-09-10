@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+{% if category_posts %}
+
+    <h3>{{cats}}</h3>
+
+    <u1>
+    {% for post in category_posts %}
+        <li><a href="{% url 'blogapp:article_details' post.pk %}">{{ post.title }}</a>- {{post.category}} - {{ post.author.first_name}}
+            {{ post.author.last_name}} - {{ post.post_date }}
+            {% if user.is_authenticated %}
+            <small><a href="{% url 'blogapp:update_post' post.pk %}">(Edit)</a></small> -
+            <small><a href="{% url 'blogapp:delete_post' post.pk %}">(Delete)</a></small>
+
+            {% endif %}<br/>
+        {{ post.body|slice:":200"|safe }}</li>
+    {% endfor %}
+    </u1>
+{% else %}
+    <h2>Sorry this page does not exists</h2>
+{% endif %}
+
+
+
+
+{% endblock %}

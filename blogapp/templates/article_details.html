@@ -5,18 +5,32 @@
 
 {% block content %}
 
-
+<!--Current user: {{ user.first_name }} {{ user.last_name }}-->
+<!--Post author: {{ post.author.first_name }} {{ post.author.last_name }}-->
 <h1>{{ post.title }}</h1>
 <small>By: {{ post.author.first_name }}
            {{ post.author.last_name }} -
-           {{ post.post_date }} -
-           <a href="{% url 'blogapp:update_post' post.pk %}">(Edit)</a></small>
+           {{ post.post_date }}
+             {% if user.is_authenticated %}
+                 {% if user.id == post.author.id %}
+                       - <a href="{% url 'blogapp:update_post' post.pk %}">(Edit)</a></small>
+                       <a href="{% url 'blogapp:delete_post' post.pk %}">(Delete)</a></small>
+                 {% endif %}
+             {% endif %}
 <hr>
 <br/>
-{{ post.body }}
+{{ post.body|safe }}
 
 <br/><br/>
 <a href="{% url 'blogapp:home' %}" class="btn btn-secondary">BACK</a>
+
+<br/><br/>
+<hr>
+<br/>
+<form action="{% url 'blogapp:like_post' post.pk %}"
+method="POST">
+    {% csrf_token %}
+    <button type="submit", name="post_id", value="{{ post.id }}", class="btn btn-primary btn-sm">Likes</button> - {{ total_likes }} Likes
 
 
 {% endblock %}
