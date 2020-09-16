@@ -1,8 +1,8 @@
-{% extends 'all_upper.html' %}
+ {% extends 'all_upper.html' %}
 <!DOCTYPE html>
 {% load crispy_forms_tags %}
 
-{% block upper %} abc {% endblock %}
+
 {% block login %}  {% endblock %}
 {% block  reg %} {% endblock %}
 {% block services %}{% endblock %}
@@ -10,19 +10,19 @@
             Profile
         {% endblock %}
 
-{% block all %}
+{% block logbox %}
 <html  lang="en">
 
 <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
 <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
 <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-<div class="nav-left">
-    <h3><a href="{% url 'logout' %}">Logout</a></h3>
+<div class="m-3 p-3">
+
 </div>
 <div class="col-md--2">
-    <h4> <a href="#">Link</a> </h4>
+    <h3><a href="{% url 'logout' %}">Logout</a></h3>
+    <h4> <a href="{% url 'index' %}">Home</a> </h4>
 </div>
-
 
 <div class="container emp-profile">
     <form method="post">
@@ -64,9 +64,9 @@
                         <div class="profile-work">
                             <p>            </p><br/>
                             <p>            </p>
-                            <a href="">Website Link</a><br/>
-                            <a href="">Website Link</a><br/>
-                            <a href="">Website Link</a>
+                            <a href=""></a><br/>
+                            <a href=""></a><br/>
+                            <a href=""></a>
 
                         </div>
                     </div>
@@ -81,7 +81,7 @@
                                                 <label>First Name:</label></p>
                                             </div>
                                             <div class="col-md-6" >
-                                                <p class="font-weight-bold"> {{user.profile.first_name}}</p>
+                                                <p class="font-weight-bold"> {{user.first_name}}</p>
                                             </div>
                                         </div>
                                         </h4>
@@ -92,7 +92,7 @@
                                                 <label>Last Name:</label></p>
                                             </div>
                                             <div class="col-md-6" >
-                                                <p class="font-weight-bold"> {{user.profile.last_name}}</p>
+                                                <p class="font-weight-bold"> {{user.last_name}}</p>
                                             </div>
                                         </div>
                                         </h4>
@@ -103,7 +103,7 @@
                                                 <label>Email:</label></p>
                                             </div>
                                             <div class="col-md-6" >
-                                                <p class="font-weight-bold"> {{user.profile.email}}</p>
+                                                <p class="font-weight-bold"> {{user.email}}</p>
                                             </div>
                                         </div>
                                         </h4>
@@ -130,7 +130,7 @@
                         {% csrf_token %}
                     <fieldset class="form-group">
                         <legend class="border-bottom mb-4"></legend>
-
+                            {{ u_form|crispy }}
                             {{ p_form|crispy }}
                     </fieldset>
                         <div class="form-group">

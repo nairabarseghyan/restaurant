@@ -13,7 +13,6 @@ from django.utils.encoding import force_bytes
 from django.utils.http import urlsafe_base64_encode
 from django.views import View
 from django.views.generic import UpdateView
-
 from . import forms, models
 from .models import Profile
 from .tokens import account_activation_token
@@ -90,30 +89,3 @@ def profile(request):
     context = {'u_form': u_form, 'p_form': p_form}
     return render(request, 'profile.html', context)
 
-
-# def edit_profile(request):
-#     user = request.user
-#     form = ProfileForm(request.POST or None,
-#                        initial={'username': user.username, 'email': user.profile.email,
-#                                 'first_name': user.profile.first_name,
-#                                 'last_name': user.profile.last_name, 'date_of_birth': user.profile.date_of_birth})
-#     if request.method == 'POST':
-#         if form.is_valid():
-#             user.username = request.POST['username']
-#             user.first_name = request.POST['first_name']
-#             user.profile.first_name = request.POST['first_name']
-#             user.last_name = request.POST['last_name']
-#             user.profile.last_name = request.POST['last_name']
-#             user.date_of_birth = request.POST['date_of_birth']
-#             user.profile.date_of_birth = request.POST['date_of_birth']
-#             user.profile.email = request.POST['email']
-#             user.email = request.POST['email']
-#
-#             user.save()
-#             return HttpResponseRedirect('%s' % (reverse('profile')))
-#
-#     context = {
-#         "form": form
-#     }
-#
-#     return render(request, "edit_profile.html", context)
